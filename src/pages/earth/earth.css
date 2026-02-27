@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap');
+
+@font-face {
+    font-family: "Spartan";
+    src: url("../../assets/fonts/Spartan-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Spartan;
+    src: url("../../assets/fonts/Spartan-Bold.ttf");
+    font-weight: 700;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #070724;
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("/src/assets/background-stars.svg");
+    z-index: -1;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: Antonio, "Spartan";
+    transition: 0.2s;
+}
+
+header{
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+    position: relative;
+}
+
+header::before{
+    content: "";
+    position: absolute;
+    top: 65px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    opacity: 20%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+header h1{
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: -1.05px;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.planets-earth{
+    display: flex;
+    gap: 35px;
+}
+
+.planets-earth a{
+    color: white;
+    font-size: 11px;
+    letter-spacing: 1px;
+    opacity: 0.75;
+    position: relative;
+}
+
+.planets-earth a:hover{
+    opacity: 1;
+}
+
+.planets-earth p{
+    font-family: "Spartan";
+    font-weight: 700;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    flex-direction: column;
+}
+
+.top{
+    display: flex;
+    gap: 200px;
+    align-items: center;
+}
+
+.title{
+    font-weight: 400;
+    font-size: 80px;
+    color: white;
+    margin: 0;
+}
+
+.details{
+    font-family: "Spartan";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    color: white;
+    opacity: 0.75;
+}
+
+.source{
+    font-family: "Spartan";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    opacity: 0.50;
+}
+
+.source span{
+    font-family: "Spartan";
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.buttons-earth-overview{
+    height: 176px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttons-earth-overview button{
+    height: 48px;
+    width: 350px;
+    background-color: transparent;
+    border: solid 1px #26263F;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 30px;
+}
+
+.buttons-earth-overview button:hover{
+    background-color: #26263F;
+}
+
+.buttons-earth-overview button span{
+    color: white;
+    font-family: "Spartan";
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2.57px;
+}
+
+.buttons-earth-overview button p{
+    font-family: "Spartan";
+    font-weight: 700;
+    letter-spacing: 2.57px;
+    font-size: 12px;
+    color: white;
+    opacity: 0.5;
+    margin-right: 50px;
+}
+
+.specifics{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    margin-top: 80px;
+}
+
+.specifics div{
+    height: 128px;
+    width: 255px;
+    border: solid 1px #26263F;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.specifics div p{
+    margin: 0;
+    font-family: "Spartan";
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: white;
+    opacity: 0.5;
+}
+
+.specifics div h1{
+    margin: 0;
+    font-weight: 400;
+    font-size: 400;
+    letter-spacing: -1.5px;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+/* SPECIALS */
+
+.buttons-earth-overview .earth-overview{
+    background-color: #6D2ED5;
+    border: none;
+}
+
+.planets-earth a:hover::before{
+    content: "";
+    height: 4px;
+    width: 100%;
+    background-color: #6D2ED5;
+    position: absolute;
+    top: -27px;
+    left: 0px;
+}
