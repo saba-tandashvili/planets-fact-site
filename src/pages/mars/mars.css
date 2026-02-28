@@ -123,6 +123,8 @@ a{
     line-height: 25px;
     color: white;
     opacity: 0.75;
+    width: 350px;
+    height: auto;
 }
 
 .source{
@@ -133,7 +135,7 @@ a{
     opacity: 0.50;
 }
 
-.source span{
+.source a{
     font-family: "Spartan";
     font-weight: 700;
     text-decoration: underline;
@@ -231,7 +233,7 @@ a{
 
 /* SPECIALS */
 
-.buttons-mars-overview .mars-overview{
+#active-mars{
     background-color: #D14C32;
     border: none;
 }
@@ -244,4 +246,12 @@ a{
     position: absolute;
     top: -27px;
     left: 0px;
+}
+
+.planet .geology{
+    position: absolute;
+    height: 199px;
+    width: 163px;
+    top: 60%;
+    left: 29%;
 }

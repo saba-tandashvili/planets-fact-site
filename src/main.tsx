@@ -1,154 +1,61 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import MercuryOverview from "./pages/mercury/overview";
-import MercuryInternal from "./pages/mercury/internal";
-import MercurySurface from "./pages/mercury/surface";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import MercuryOverview from "./pages/mercury/mercury.tsx";
 
-import VenusOverview from "./pages/venus/overview"
-import VenusInternal from "./pages/venus/internal"
-import VenusSurface from "./pages/venus/surface"
+import VenusOverview from "./pages/venus/venus.tsx";
 
-import EarthOverview from "./pages/earth/overview"
-import EarthInternal from "./pages/earth/internal"
-import EarthSurface from "./pages/earth/surface"
+import EarthOverview from "./pages/earth/earth.tsx";
 
-import MarsOverview from "./pages/mars/overview"
-import MarsInternal from "./pages/mars/internal"
-import MarsSurface from "./pages/mars/surface"
+import MarsOverview from "./pages/mars/mars.tsx";
 
-import JupiterOverview from "./pages/jupiter/overview"
-import JupiterInternal from "./pages/jupiter/internal"
-import JupiterSurface from "./pages/jupiter/surface"
+import JupiterOverview from "./pages/jupiter/jupiter.tsx";
 
-import SaturnOverview from "./pages/saturn/overview"
-import SaturnInternal from "./pages/saturn/internal"
-import SaturnSurface from "./pages/saturn/surface"
+import SaturnOverview from "./pages/saturn/saturn.tsx";
 
-import UranusOverview from "./pages/uranus/overview"
-import UranusInternal from "./pages/uranus/internal"
-import UranusSurface from "./pages/uranus/surface"
+import UranusOverview from "./pages/uranus/uranus.tsx";
 
-import NeptuneOverview from "./pages/neptune/overview"
-import NeptuneInternal from "./pages/neptune/internal"
-import NeptuneSurface from "./pages/neptune/surface"
+import NeptuneOverview from "./pages/neptune/neptune.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MercuryOverview />,
   },
-  {
-    path: "/mercury/internal",
-    element: <MercuryInternal />,
-  },
-  {
-    path: "/mercury/surface",
-    element: <MercurySurface />,
-  },
-
-
 
   {
     path: "/venus",
     element: <VenusOverview />,
   },
-  {
-    path: "/venus/internal",
-    element: <VenusInternal />,
-  },
-  {
-    path: "/venus/surface",
-    element: <VenusSurface />,
-  },
 
-
-  
   {
     path: "/earth",
     element: <EarthOverview />,
   },
-  {
-    path: "/earth/internal",
-    element: <EarthInternal />,
-  },
-  {
-    path: "/earth/surface",
-    element: <EarthSurface />,
-  },
-
-
 
   {
     path: "/mars",
     element: <MarsOverview />,
   },
-  {
-    path: "/mars/internal",
-    element: <MarsInternal />,
-  },
-  {
-    path: "/mars/surface",
-    element: <MarsSurface />,
-  },
-
 
   {
     path: "/jupiter",
     element: <JupiterOverview />,
   },
-  {
-    path: "/jupiter/internal",
-    element: <JupiterInternal />,
-  },
-  {
-    path: "/jupiter/surface",
-    element: <JupiterSurface />,
-  },
-
 
   {
     path: "/saturn",
     element: <SaturnOverview />,
   },
-  {
-    path: "/saturn/internal",
-    element: <SaturnInternal />,
-  },
-  {
-    path: "/saturn/surface",
-    element: <SaturnSurface />,
-  },
-
 
   {
     path: "/uranus",
     element: <UranusOverview />,
   },
-  {
-    path: "/uranus/internal",
-    element: <UranusInternal />,
-  },
-  {
-    path: "/uranus/surface",
-    element: <UranusSurface />,
-  },
-
 
   {
     path: "/neptune",
     element: <NeptuneOverview />,
-  },
-  {
-    path: "/neptune/internal",
-    element: <NeptuneInternal />,
-  },
-  {
-    path: "/neptune/surface",
-    element: <NeptuneSurface />,
   },
 ]);
 
