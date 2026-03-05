@@ -2,13 +2,13 @@
 
 @font-face {
     font-family: "Spartan";
-    src: url("../../assets/fonts/Spartan-Regular.ttf");
+    src: url("../assets/fonts/Spartan-Regular.ttf");
     font-weight: 400;
 }
 
 @font-face {
     font-family: Spartan;
-    src: url("../../assets/fonts/Spartan-Bold.ttf");
+    src: url("../assets/fonts/Spartan-Bold.ttf");
     font-weight: 700;
 }
 
@@ -73,12 +73,12 @@ a{
     color: inherit;
 }
 
-.planets-mercury{
+.planets{
     display: flex;
     gap: 35px;
 }
 
-.planets-mercury a{
+.planets a{
     color: white;
     font-size: 11px;
     letter-spacing: 1px;
@@ -86,11 +86,11 @@ a{
     position: relative;
 }
 
-.planets-mercury a:hover{
+.planets a:hover{
     opacity: 1;
 }
 
-.planets-mercury p{
+.planets p{
     font-family: "Spartan";
     font-weight: 700;
 }
@@ -142,7 +142,7 @@ a{
     cursor: pointer;
 }
 
-.buttons-mercury-overview{
+.buttons-overview{
     height: 176px;
     width: 350px;
     display: flex;
@@ -151,7 +151,7 @@ a{
     gap: 10px;
 }
 
-.buttons-mercury-overview button{
+.buttons-overview button{
     height: 48px;
     width: 350px;
     background-color: transparent;
@@ -162,11 +162,11 @@ a{
     padding-left: 30px;
 }
 
-.buttons-mercury-overview button:hover{
+.buttons-overview button:hover{
     background-color: #26263F;
 }
 
-.buttons-mercury-overview button span{
+.buttons-overview button span{
     color: white;
     font-family: "Spartan";
     font-weight: 700;
@@ -174,7 +174,7 @@ a{
     letter-spacing: 2.57px;
 }
 
-.buttons-mercury-overview button p{
+.buttons-overview button p{
     font-family: "Spartan";
     font-weight: 700;
     letter-spacing: 2.57px;
@@ -220,32 +220,6 @@ a{
     font-size: 400;
     letter-spacing: -1.5px;
     color: white;
-}
-
-
-
-
-
-
-
-
-
-
-/* SPECIALS */
-
-#active-mercury{
-    background-color: #419EBB;
-    border: none;
-}
-
-.planets-mercury a:hover::before{
-    content: "";
-    height: 4px;
-    width: 100%;
-    background-color: #419EBB;
-    position: absolute;
-    top: -27px;
-    left: 0px;
 }
 
 .planet .geology{
