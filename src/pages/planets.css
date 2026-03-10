@@ -239,6 +239,7 @@ a {
   cursor: pointer;
   width: 24px;
   height: 17px;
+  align-self: center;
 }
 
 .buttons-list-mobile {
@@ -275,13 +276,82 @@ a {
   width: 100%;
 }
 
+.pages {
+  background-color: #070724;
+  height: 130vh;
+  width: 100%;
+  position: absolute;
+  z-index: 67;
+  transform: translateY(-20px);
+}
+
+.pages .planets {
+  display: block;
+}
+
+.pages-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #26263f;
+}
+
+.pages-top .list{
+    transform: translateY(3px);
+}
+
+.pages-top h1 {
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: -1.05px;
+  color: white;
+  margin: 0;
+}
+
+.pages .planets{
+    display: flex;
+    flex-direction: column;
+    height: 487px;
+    margin-top: 40px;
+    margin-left: 20px;
+    gap: 20px;
+}
+
+.pages .planets a{
+    opacity: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10%;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1.36px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #26263f;
+}
+
+.mobile-planet-left{
+    display: flex;
+    gap: 20px;
+}
+
+.pages .planets a .arrow{
+    height: 9px;
+    width: 5px;
+}
+
+
+
 @media (max-width: 1000px) {
   header {
     flex-direction: column;
     margin: 0;
     gap: 20px;
   }
-
   header::before {
     top: 130px;
   }

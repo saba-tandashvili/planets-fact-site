@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Source from "../assets/icon-source.svg";
 import Data from "../data.json";
 import List from "../assets/icon-hamburger.svg";
+import Arrow from "../assets/icon-chevron.svg"
 
 import Mercury from "../assets/planet-mercury.svg";
 import MercuryI from "../assets/planet-mercury-internal.svg";
@@ -65,6 +66,8 @@ export default function Planets() {
     "overview",
   );
 
+  const [list, setList] = useState<boolean>(false);
+
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -103,6 +106,149 @@ export default function Planets() {
 
   return (
     <div>
+      <div className="pages" style={{ display: list ? "block" : "none" }}>
+        <div className="pages-top">
+          <h1>THE PLANETS</h1>
+
+          <img
+            src={List}
+            alt=""
+            className="list"
+            onClick={() => setList(!list)}
+          />
+        </div>
+
+        <div className="planets">
+          <Link to={`/mercury`} className="mobile-planet" onClick={() => setList(!list)}>
+            <div className="mobile-planet-left">
+              <div
+                style={{
+                  backgroundColor: "#DEF4FC",
+                  height: "20px",
+                  width: "20px",
+                  borderRadius: "50%",
+                }}
+              ></div>
+              MERCURY
+            </div>
+
+            <img src={Arrow} alt=""  className="arrow"/>
+          </Link>
+
+          <Link to={`/venus`} className="mobile-planet" onClick={() => setList(!list)}>
+            <div className="mobile-planet-left">
+              <div
+                style={{
+                  backgroundColor: "#F7CC7F",
+                  height: "20px",
+                  width: "20px",
+                  borderRadius: "50%",
+                }}
+              ></div>
+              VENUS
+            </div>
+
+            <img src={Arrow} alt=""  className="arrow"/>
+          </Link>
+
+          <Link to={`/earth`} className="mobile-planet" onClick={() => setList(!list)}>
+            <div className="mobile-planet-left">
+              <div
+                style={{
+                  backgroundColor: "#545BFE",
+                  height: "20px",
+                  width: "20px",
+                  borderRadius: "50%",
+                }}
+              ></div>
+              EARTH
+            </div>
+
+            <img src={Arrow} alt=""  className="arrow"/>
+          </Link>
+
+          <Link to={`/mars`} className="mobile-planet" onClick={() => setList(!list)}>
+            <div className="mobile-planet-left">
+              <div
+                style={{
+                  backgroundColor: "#FF6A45",
+                  height: "20px",
+                  width: "20px",
+                  borderRadius: "50%",
+                }}
+              ></div>
+              MARS
+            </div>
+
+            <img src={Arrow} alt=""  className="arrow"/>
+          </Link>
+
+          <Link to={`/jupiter`} className="mobile-planet" onClick={() => setList(!list)}>
+            <div className="mobile-planet-left">
+              <div
+                style={{
+                  backgroundColor: "#ECAD7A",
+                  height: "20px",
+                  width: "20px",
+                  borderRadius: "50%",
+                }}
+              ></div>
+              JUPITER
+            </div>
+
+            <img src={Arrow} alt=""  className="arrow"/>
+          </Link>
+
+          <Link to={`/saturn`} className="mobile-planet" onClick={() => setList(!list)}>
+            <div className="mobile-planet-left">
+              <div
+                style={{
+                  backgroundColor: "#FCCB6B",
+                  height: "20px",
+                  width: "20px",
+                  borderRadius: "50%",
+                }}
+              ></div>
+              SATURN
+            </div>
+
+            <img src={Arrow} alt=""  className="arrow"/>
+          </Link>
+
+          <Link to={`/uranus`} className="mobile-planet" onClick={() => setList(!list)}>
+            <div className="mobile-planet-left">
+              <div
+                style={{
+                  backgroundColor: "#65F0D5",
+                  height: "20px",
+                  width: "20px",
+                  borderRadius: "50%",
+                }}
+              ></div>
+              URANUS
+            </div>
+
+            <img src={Arrow} alt=""  className="arrow"/>
+          </Link>
+
+          <Link to={`/neptune`} className="mobile-planet" onClick={() => setList(!list)}>
+            <div className="mobile-planet-left">
+              <div
+                style={{
+                  backgroundColor: "#497EFA",
+                  height: "20px",
+                  width: "20px",
+                  borderRadius: "50%",
+                }}
+              ></div>
+              NEPTUNE
+            </div>
+
+            <img src={Arrow} alt=""  className="arrow"/>
+          </Link>
+        </div>
+      </div>
+
       <header>
         <div className="top-mobile">
           <h1>THE PLANETS</h1>
@@ -115,7 +261,12 @@ export default function Planets() {
             ))}
           </div>
 
-          <img src={List} alt="" className="list" />
+          <img
+            src={List}
+            alt=""
+            className="list"
+            onClick={() => setList(!list)}
+          />
         </div>
 
         <div className="buttons-list-mobile">
