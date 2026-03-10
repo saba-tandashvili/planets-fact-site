@@ -123,7 +123,7 @@ export default function Planets() {
             style={{
               borderBottom:
                 active === "overview" ? `solid 4px ${planet.color}` : "",
-                opacity: active === "overview" ? "" : "75%" 
+              opacity: active === "overview" ? "" : "75%",
             }}
             onClick={() => {
               setActive("overview");
@@ -135,7 +135,7 @@ export default function Planets() {
             style={{
               borderBottom:
                 active === "internal" ? `solid 4px ${planet.color}` : "",
-                opacity: active === "internal" ? "" : "75%" 
+              opacity: active === "internal" ? "" : "75%",
             }}
             onClick={() => {
               setActive("internal");
@@ -147,7 +147,7 @@ export default function Planets() {
             style={{
               borderBottom:
                 active === "surface" ? `solid 4px ${planet.color}` : "",
-                opacity: active === "surface" ? "" : "75%" 
+              opacity: active === "surface" ? "" : "75%",
             }}
             onClick={() => {
               setActive("surface");
