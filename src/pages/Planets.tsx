@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Source from "../assets/icon-source.svg";
 import Data from "../data.json";
+import List from "../assets/icon-hamburger.svg";
 
 import Mercury from "../assets/planet-mercury.svg";
 import MercuryI from "../assets/planet-mercury-internal.svg";
@@ -38,9 +39,9 @@ import NeptuneG from "../assets/geology-neptune.png";
 
 type TPlanets = {
   planet: string;
-  internal: string; 
-  geology: string
-}
+  internal: string;
+  geology: string;
+};
 
 const planetImages: Record<string, TPlanets> = {
   mercury: { planet: Mercury, internal: MercuryI, geology: MercuryG },
@@ -55,6 +56,7 @@ const planetImages: Record<string, TPlanets> = {
 
 export default function Planets() {
   const { planetName } = useParams();
+
   const planet =
     Data.find((p) => p.name.toLowerCase() === planetName?.toLowerCase()) ||
     Data[0];
@@ -63,9 +65,17 @@ export default function Planets() {
     "overview",
   );
 
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const resize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", resize);
+    return () => window.removeEventListener("resize", resize);
+  }, []);
+
   useEffect(() => {
     document.documentElement.style.setProperty("--planet-color", planet.color);
-  }, [planet.color]);
+  }, [planet]);
 
   const activeData =
     active === "overview"
@@ -84,39 +94,101 @@ export default function Planets() {
   const activeGeology =
     active === "surface" ? planetImages[planet.name.toLowerCase()].geology : "";
 
+  const planetSize =
+    width <= 768
+      ? planet.responsive.mobile
+      : width <= 1000
+        ? planet.responsive.tablet
+        : planet.responsive.desktop;
+
   return (
     <div>
       <header>
-        <h1>THE PLANETS</h1>
-        <div className="planets">
-          {Data.map((p) => (
-            <Link key={p.name} to={`/${p.name.toLowerCase()}`}>
-              <p>{p.name.toUpperCase()}</p>
-            </Link>
-          ))}
+        <div className="top-mobile">
+          <h1>THE PLANETS</h1>
+
+          <div className="planets">
+            {Data.map((p) => (
+              <Link key={p.name} to={`/${p.name.toLowerCase()}`}>
+                <p>{p.name.toUpperCase()}</p>
+              </Link>
+            ))}
+          </div>
+
+          <img src={List} alt="" className="list" />
+        </div>
+
+        <div className="buttons-list-mobile">
+          <p
+            style={{
+              borderBottom:
+                active === "overview" ? `solid 4px ${planet.color}` : "",
+                opacity: active === "overview" ? "" : "75%" 
+            }}
+            onClick={() => {
+              setActive("overview");
+            }}
+          >
+            OVERVIEW
+          </p>
+          <p
+            style={{
+              borderBottom:
+                active === "internal" ? `solid 4px ${planet.color}` : "",
+                opacity: active === "internal" ? "" : "75%" 
+            }}
+            onClick={() => {
+              setActive("internal");
+            }}
+          >
+            STRUCTURE
+          </p>
+          <p
+            style={{
+              borderBottom:
+                active === "surface" ? `solid 4px ${planet.color}` : "",
+                opacity: active === "surface" ? "" : "75%" 
+            }}
+            onClick={() => {
+              setActive("surface");
+            }}
+          >
+            SURFACE
+          </p>
         </div>
       </header>
 
       <div className="main">
         <div className="top">
           <div className="planet">
-            <img src={activeImg} alt={planet.name} />
+            <img
+              src={activeImg}
+              alt={planet.name}
+              style={{ width: planetSize }}
+            />
+
             <img
               src={activeGeology}
               alt=""
               className="geology"
-              style={{ display: activeGeology === "" ? "none" : "block" }}
+              style={{
+                display: activeGeology === "" ? "none" : "block",
+                left: planet.left,
+              }}
             />
           </div>
 
           <div className="info">
-            <h1 className="title">{planet.name.toUpperCase()}</h1>
-            <p className="details">{activeData.content}</p>
+            <div className="infos">
+              <h1 className="title">{planet.name.toUpperCase()}</h1>
 
-            <p className="source">
-              Source: <a href={activeData.source}>Wikipedia</a>{" "}
-              <img src={Source} alt="source icon" />
-            </p>
+              <p className="details">{activeData.content}</p>
+
+              <p className="source">
+                Source: <a href={activeData.source}>Wikipedia</a>{" "}
+                <img src={Source} alt="source icon" />
+              </p>
+            </div>
 
             <div className="buttons-overview">
               <button
@@ -127,6 +199,7 @@ export default function Planets() {
               >
                 <p>01</p> <span>OVERVIEW</span>
               </button>
+
               <button
                 style={{
                   backgroundColor: active === "internal" ? planet.color : "",
@@ -135,6 +208,7 @@ export default function Planets() {
               >
                 <p>02</p> <span>INTERNAL STRUCTURE</span>
               </button>
+
               <button
                 style={{
                   backgroundColor: active === "surface" ? planet.color : "",
@@ -152,14 +226,17 @@ export default function Planets() {
             <p>ROTATION TIME</p>
             <h1>{planet.rotation}</h1>
           </div>
+
           <div>
             <p>REVOLUTION TIME</p>
             <h1>{planet.revolution}</h1>
           </div>
+
           <div>
             <p>RADIUS</p>
             <h1>{planet.radius}</h1>
           </div>
+
           <div>
             <p>AVERAGE TEMP</p>
             <h1>{planet.temperature}</h1>
